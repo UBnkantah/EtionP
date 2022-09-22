@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@600&display=swap');
+
+:root{
+    --fColor: rgb(1, 1, 15);
+    --butColor: rgb(220, 72, 32);
+    --hColor: rgb(248, 214, 22);
+    --tcolor: rgb(4, 4, 80);
+    --Ofam: 'Open Sans', sans-serif;
+    --Pfam: 'Poppins', sans-serif;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    background-color: #FBAB7E;
+    background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+    ;
+}
+/* Navbar */
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 30px;
+}
+nav .img{
+    flex: 1;
+}
+nav ul{
+    flex: 3;
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    list-style: none;
+}
+nav ul li{
+    color: var(--tcolor);
+    font-family: var(--Pfam);
+    font-weight: 600;
+    cursor: pointer;
+}
+nav .button{
+    display: flex;
+    justify-content: center;
+    flex: 1;
+}
+nav button{
+    padding: 10px;
+    background-color: var(--butColor);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-family: var(--Ofam);
+}
+/* nav button:hover{
+    opacity: 0.5;
+} */
+/* section 1 */
+.sect1{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    padding: 0px 100px;
+}
+.sect1 .details{
+    flex: 1;
+}
+.sect1 .details h1{
+    font-size: 70px;
+}
+.sect1 .details h1 span{
+    color: var(--hColor);
+}
+.sect1 .details p{
+    font-size: 30px;
+}
+.sect1 .log{
+    display: flex;
+    justify-content: center;
+    flex: 1;
+}
+.sect1 img{
+    width: 500px;
+}
+/* section 2 */
+.sect2 h1{
+    text-align: center;
+    color: var(--fColor);
+    font-size: 40px;
+    font-family: var(--Ofam);
+}
+.sect2{
+    padding: 50px 0px;
+}
+.sect2 .hiw{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* flex-wrap: wrap; */
+    padding: 50px 0px;
+}
+.sect2 .hiw .items{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 320px;
+    gap: 1em;
+}
+.sect2 .items p{
+    font-size: 20px;
+    font-family: var(--Ofam);
+    text-align: center;
+}
+/* section 3 */
+.sect3 h1{
+    text-align: center;
+    color: var(--fColor);
+    font-size: 40px;
+    font-family: var(--Ofam);
+}
+.sect3{
+    padding: 50px 0px;
+}
+.sect3 .bene{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    flex-wrap: wrap;
+    padding: 50px 0px;
+}
+.sect3 .bene .items{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    gap: 1em;
+}
+.sect3 .items h3{
+    font-size: 30px;
+}
+.sect3 .items p{
+    font-size: 20px;
+    font-family: var(--Ofam);
+    font-weight: 400;
+}
+.sect-4{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--tcolor);
+    padding: 65px;
+    margin: 0px 250px;
+    margin-bottom: 150px;
+    gap: 0.5em;
+}
+.sect-4 h1{
+    color: var(--tcolor);
+    font-family: var(--Ofam);
+    font-size: 50px;
+}
+.sect-4 p{
+    color: var(--tcolor);
+    font-family: var(--Ofam);
+    font-size: 25px;
+    font-weight: 700;
+}
+/* footer */
+footer{
+    display: flex;
+    justify-content: start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    background-color: var(--fColor);
+    padding: 100px;
+}
+footer .logo{
+    flex: 1.5;
+}
+footer .items{
+    flex: 1;
+    
+}
+footer h4{
+    color: white;
+    margin-bottom: 10px;
+    font-size: 25px;
+    cursor: pointer;
+}
+footer p{
+    margin-bottom: 5px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+footer form{
+    display: flex;
+    gap: 0.5em;
+    margin-bottom: 10px;
+}
+footer form button{
+    padding: 10px;
+    background-color: var(--butColor);
+    color: white;
+
+}
