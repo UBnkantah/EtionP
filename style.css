@@ -1,173 +1,616 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Raleway:ital,wght@0,400;1,500&display=swap');
 
 :root{
     --fColor: rgb(1, 1, 15);
-    --butColor: rgb(220, 72, 32);
-    --hColor: rgb(248, 214, 22);
-    --tcolor: rgb(4, 4, 80);
-    --Ofam: 'Open Sans', sans-serif;
+    --butColor: #d9370b;
+    --hColor: #f8d511;
+    --tcolor: #040450;
+    --wColor: #ffffff;
+    --Ofam: 'Lato', sans-serif;
     --Pfam: 'Poppins', sans-serif;
 }
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-header{
-    background-color: #FBAB7E;
-    background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+body{
+    font-family: var(--Pfam);
+}
+.header{
+    background-color: #f8d511;
+    background-image: linear-gradient(62deg, #d9370b 0%, #f8d511 100%);
     ;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+html{
+    overflow-x: hidden;
 }
 /* Navbar */
-nav{
+header{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px 30px;
+    position: relative;
+    padding: 10px 30px;
 }
-nav .img{
+.head #hamburger-icon{
+    display: none;
+}
+.head{
     flex: 1;
+} 
+header nav{
+    /* flex: 4;
+    display: inherit; */
+    padding: 0px 50px;
 }
-nav ul{
-    flex: 3;
+header nav ul{
     display: flex;
-    justify-content: center;
-    gap: 2em;
-    list-style: none;
+    justify-content: space-between;
+    position: absolute;
+    left: 300px;
+    gap: 1em;
+    /* margin-left: 10%; */
+    /* margin-left: 50px; */
 }
-nav ul li{
+header nav ul li{
+    font-size: 20px;
+    list-style: none;
+    font-family: var(--Ofam);
+    font-weight: 700;
+}
+header nav ul li a{
+    text-decoration: none;
     color: var(--tcolor);
-    font-family: var(--Pfam);
+}
+header nav ul li a:hover{
+    background-color: var(--butColor);
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 25px;
+}
+header nav .button{
+    float: right;
+}
+header nav .button button{
+    padding: 10px 30px;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: var(--butColor);
+    border: 3px solid var(--butColor);
+    color: #ffffff;
+    font-family: var(--Ofam);
     font-weight: 600;
     cursor: pointer;
 }
-nav .button{
-    display: flex;
-    justify-content: center;
-    flex: 1;
+header nav .button button:hover{
+    color: var(--butColor);
+    background-color: #ffffff;
 }
-nav button{
-    padding: 10px;
-    background-color: var(--butColor);
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-family: var(--Ofam);
+@media screen and (max-width: 767px) {
+    header .head{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    header nav{
+        display: none;
+    }
+    .head #hamburger-icon{
+        display: flex;
+    }
+    header{
+        position: relative;
+    }
+    header nav{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        background-color: #f8d511;
+        background-image: linear-gradient(62deg, #d9370b 0%, #f8d511 100%);
+        ;
+        position: absolute;
+        z-index: 100px;
+        border-radius: 20px;
+        top: 0px;
+        /* right: 0px; */
+        /* left: -10em; */
+        padding: 1em;
+        width: 100%;
+        height: 250px;
+        display: none;
+    }
+    header nav ul{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 1em;
+        position: absolute;
+        left: 150px;
+    }
+    /* header nav ul li{
+        margin-right: 300px;
+    } */
+    header nav .button{
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        bottom: 20px;
+        right: 80px;
+    }
+    /* active state */
+    .active #hamburger-icon{
+        content: url(./PICS/icon-close.svg);
+    }
+    .active nav{
+        display: flex;
+    }
 }
-/* nav button:hover{
-    opacity: 0.5;
+/* @media screen and (max-width: 990px) {
+    header nav ul li{
+        font-size: 15px;
+    }
 } */
-/* section 1 */
-.sect1{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2em;
-    padding: 0px 100px;
-}
-.sect1 .details{
-    flex: 1;
-}
-.sect1 .details h1{
-    font-size: 70px;
-}
-.sect1 .details h1 span{
-    color: var(--hColor);
-}
-.sect1 .details p{
-    font-size: 30px;
-}
-.sect1 .log{
-    display: flex;
-    justify-content: center;
-    flex: 1;
-}
-.sect1 img{
-    width: 500px;
-}
-/* section 2 */
-.sect2 h1{
-    text-align: center;
-    color: var(--fColor);
-    font-size: 40px;
-    font-family: var(--Ofam);
-}
-.sect2{
-    padding: 50px 0px;
-}
-.sect2 .hiw{
+/* About */
+.sect-eti{
     display: flex;
     justify-content: center;
     align-items: center;
-    /* flex-wrap: wrap; */
+    flex-wrap: wrap;
+    gap: 2em;
+    background-color: #f8d511;
+    background-image: linear-gradient(62deg, #d9370b 0%, #f8d511 100%);
+    ;
+}
+.sect-eti .details{
+    flex: 1;
+    padding: 50px;
+    gap: 1em;
+}
+.sect-eti .details h1 span{
+    color: #f8d511;
+}
+.sect-eti .log{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+.sect-eti h1{
+    font-size: 60px;
+    font-family: var(--Ofam);
+    font-weight: 800;
+}
+.sect-eti .details p{
+    font-size: 30px;
+    font-family: var(--Ofam);
+    font-weight: 500;
+}
+.sect-eti .log img{
+        -webkit-animation-name: lightSpeedIn;
+        animation-name: lightSpeedIn;
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        }
+        @-webkit-keyframes lightSpeedIn {
+        0% {
+        -webkit-transform: translate3d(100%, 0, 0) skewX(-30deg);
+        transform: translate3d(100%, 0, 0) skewX(-30deg);
+        opacity: 0;
+        }
+    60% {
+    -webkit-transform: skewX(20deg);
+    transform: skewX(20deg);
+    opacity: 1;
+    }
+    80% {
+    -webkit-transform: skewX(-5deg);
+    transform: skewX(-5deg);
+    opacity: 1;
+    }
+    100% {
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1;
+    }
+    }
+    @keyframes lightSpeedIn {
+    0% {
+    -webkit-transform: translate3d(100%, 0, 0) skewX(-30deg);
+    transform: translate3d(100%, 0, 0) skewX(-30deg);
+    opacity: 0;
+    }
+    60% {
+    -webkit-transform: skewX(20deg);
+    transform: skewX(20deg);
+    opacity: 1;
+    }
+    80% {
+    -webkit-transform: skewX(-5deg);
+    transform: skewX(-5deg);
+    opacity: 1;
+    }
+    100% {
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1;
+    }
+}
+@media screen and (max-width: 767px) {
+    .sect-eti .details{
+        padding: 10px;
+    }
+    .sect-eti .details h1{
+        font-size: 30px;
+    }
+    .sect-eti .details p{
+        font-size: 20px;
+    }
+    .sect-eti .log img{
+        width: 300px;
+    }
+}
+/* section 2 */
+.how-it-works h1{
+    text-align: center;
+    color: var(--fColor);
+    font-size: 50px;
+    font-family: var(--Ofam);
+}
+.how-it-works{
     padding: 50px 0px;
 }
-.sect2 .hiw .items{
+.how-it-works .hiw{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 50px 0px;
+    gap: 2.5em;
+}
+.how-it-works .hiw .items{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 320px;
-    gap: 1em;
+    width: 350px;
+    height: 250px;
+    cursor: pointer;
+    gap: 1.5em;
+    background-color: rgb(235, 232, 228);
+    box-shadow: 0 0 5px 5px rgb(235, 232, 228);
+    border-radius: 20px;
+
+    /* CSS ANIMATION */
+    -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  }
+  @-webkit-keyframes fadeInDown {
+  0% {
+  opacity: 0;
+  -webkit-transform: translate3d(0, -100%, 0);
+  transform: translate3d(0, -100%, 0);
+  }
+  100% {
+  opacity: 1;
+  -webkit-transform: none;
+  transform: none;
+  }
+  }
+  @keyframes fadeInDown {
+  0% {
+  opacity: 0;
+  -webkit-transform: translate3d(0, -100%, 0);
+  transform: translate3d(0, -100%, 0);
+  }
+  100% {
+  opacity: 1;
+  -webkit-transform: none;
+  transform: none;
+  }
 }
-.sect2 .items p{
-    font-size: 20px;
+.how-it-works .hiw .items img{
+    width: 75px;
+}
+.how-it-works .items p{
+    font-size: 30px;
     font-family: var(--Ofam);
+    font-weight: 500;
     text-align: center;
+}
+.how-it-works #red:hover{
+    background-color: var(--butColor);
+}
+.how-it-works #yell:hover{
+    background-color: var(--hColor);
+}
+@media screen and (max-width: 767px) {
+    .how-it-works .hiw{
+        padding: 20px 0px;
+    }
+    .how-it-works .hiw .items{
+        width: 250px;
+        height: 200px;
+    }
+    .how-it-works .items p{
+        font-size: 20px;
+    }
+    .how-it-works h1{
+        font-size: 30px;
+    }
+    /* CSS ANIMATION */
+    .how-it-works #red{
+        -webkit-animation-name: slideInLeft;
+  animation-name: slideInLeft;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  }
+  @-webkit-keyframes slideInLeft {
+  0% {
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  visibility: visible;
+  }
+  100% {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  }
+  }
+  @keyframes slideInLeft {
+  0% {
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  visibility: visible;
+  }
+  100% {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  }
+  }
+  .how-it-works #yell{
+    -webkit-animation-name: slideInRight;
+  animation-name: slideInRight;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  }
+  @-webkit-keyframes slideInRight {
+  0% {
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  visibility: visible;
+  }
+  100% {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  }
+  }
+  @keyframes slideInRight {
+  0% {
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  visibility: visible;
+  }
+  100% {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  }
+  } 
 }
 /* section 3 */
-.sect3 h1{
+.benefits h1{
     text-align: center;
     color: var(--fColor);
-    font-size: 40px;
+    font-size: 50px;
     font-family: var(--Ofam);
 }
-.sect3{
-    padding: 50px 0px;
+.benefits{
+    padding: 50px 10px;
 }
-.sect3 .bene{
+.benefits .bene{
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 2em;
     flex-wrap: wrap;
-    padding: 50px 0px;
+    padding: 50px 20px;
 }
-.sect3 .bene .items{
+.benefits .bene .items{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 400px;
-    gap: 1em;
+    height: 400px;
+    padding: 20px;
+    background-color: rgb(235, 232, 228);
+    box-shadow: 0 0 5px 5px rgb(235, 232, 228);
+    border-radius: 20px;
+    gap: 1.5em;
+    cursor: pointer;
+
+    /* CSS ANIMATIONS */
+    -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  }
+  @-webkit-keyframes fadeInUp {
+  0% {
+  opacity: 0;
+  -webkit-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0);
+  }
+  100% {
+  opacity: 1;
+  -webkit-transform: none;
+  transform: none;
+  }
+  }
+  @keyframes fadeInUp {
+  0% {
+  opacity: 0;
+  -webkit-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0);
+  }
+  100% {
+  opacity: 1;
+  -webkit-transform: none;
+  transform: none;
+  }
 }
-.sect3 .items h3{
+.benefits .items h3{
     font-size: 30px;
 }
-.sect3 .items p{
-    font-size: 20px;
+.benefits .items p{
+    font-size: 30px;
     font-family: var(--Ofam);
     font-weight: 400;
 }
-.sect-4{
+.benefits #red:hover{
+    background-color: var(--butColor);
+}
+.benefits #yell:hover{
+    background-color: var(--hColor);
+}
+@media screen and (max-width: 767px) {
+    /* .benefits.sect3{
+        padding: 20px 0px;
+    } */
+    .benefits .bene{
+        gap: 2em;
+        padding: 10px 0px;
+    }
+    .benefits .bene .items{
+        width: 300px;
+        height: 400px;
+    }
+    .benefits .items h1{
+        font-size: 30px;
+    }
+    .benefits .items p{
+        font-size: 20px;
+    }
+}
+/* Sect-4 */
+.coming-soon{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid var(--tcolor);
+    border: 5px solid var(--tcolor);
     padding: 65px;
-    margin: 0px 250px;
+    border-radius: 10%;
+    /* margin: 0px 250px; */
     margin-bottom: 150px;
     gap: 0.5em;
+    cursor: pointer;
 }
-.sect-4 h1{
+.pre-com-soon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.coming-soon h1{
     color: var(--tcolor);
     font-family: var(--Ofam);
+    font-weight: 700;
     font-size: 50px;
 }
-.sect-4 p{
+.coming-soon p{
     color: var(--tcolor);
     font-family: var(--Ofam);
     font-size: 25px;
     font-weight: 700;
+}
+
+/* CSS ANIMATION */
+.coming-soon h1{
+    font-size: clamp(1rem, 3vw+1rem, 4rem);
+    position: relative;
+    width: max-content;
+    color: var(--h1Color);
+  }
+  
+  .coming-soon h1::before, .coming-soon h1::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left:0 ;
+    bottom: 0;
+    right: 0;
+  }
+  .coming-soon h1::before{
+    background: var(--bg-color);
+    animation: typing var(--speed) steps(23) 1s forwards;
+  }
+  .coming-soon h1::after{
+    width: 0.125em;
+    background: var(--blinkingColor);
+    animation: typing var(--speed) steps(23) 1s forwards,
+    blink 600ms steps(23) infinite;
+  
+  }
+  
+  
+  
+  .pre-com-soon .coming-soon .subtitle{
+    color: var(--subtitleColor);
+    font-size: 1rem;
+    font-weight: 400;
+    opacity: 0;
+    transform: translateY(3rem                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn);
+    animation: fadeInUp 2s calc(var(--speed) + 2s) ease forwards;
+  }
+  
+  @keyframes typing{
+    to{
+      left: 100%;
+    }
+  }
+  
+  @keyframes blink{
+    to{
+      background: transparent;
+    }
+  }
+  
+  @keyframes fadeInUp{
+    to{
+      opacity: 1;
+      transform: translateY(0);
+    }
+}  
+@media screen and (max-width: 767px) {
+    .pre-com-soon{
+        margin-bottom: 50px;
+    }
+    .coming-soon{
+        margin: 0px 10px;
+        padding: 10px;
+        gap: 0.2em;
+        width: 230px;
+    }
+    .coming-soon h1{
+        font-size: 25px;
+    }
+    .coming-soon p{
+        font-size: 15px;
+    }
 }
 /* footer */
 footer{
@@ -176,9 +619,15 @@ footer{
     align-items: flex-start;
     flex-wrap: wrap;
     background-color: var(--fColor);
-    padding: 100px;
+    padding: 50px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    margin: 0;
 }
 footer .logo{
+    flex: 1.5;
+}
+footer .input{
     flex: 1.5;
 }
 footer .items{
@@ -194,17 +643,56 @@ footer h4{
 footer p{
     margin-bottom: 5px;
     color: white;
-    font-size: 20px;
+    font-size: 18px;
+    font-family: var(--Ofam);
     cursor: pointer;
+}
+footer p a{
+    color: #ffffff;
+    text-decoration: none;
 }
 footer form{
     display: flex;
     gap: 0.5em;
     margin-bottom: 10px;
 }
+footer .input .soc{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.5px;
+    width: 150px;
+}
+footer .input .soc img{
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+}
+footer form input{
+    
+}
 footer form button{
     padding: 10px;
     background-color: var(--butColor);
     color: white;
 
+}
+@media screen and (max-width: 767px) {
+    footer{
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        gap: 1em;
+    }
+    footer .items h4{
+        font-size: 25px;
+    }
+    footer .items p{
+        font-size: 15px;
+    }
+    footer .input h4{
+        font-size: 20px;
+    }
 }
