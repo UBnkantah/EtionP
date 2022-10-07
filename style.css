@@ -17,13 +17,11 @@
 body{
     font-family: var(--Pfam);
 }
-.header{
-    background-color: #f8d511;
-    background-image: linear-gradient(62deg, #d9370b 0%, #f8d511 100%);
-    ;
+/* .header{
+    background: url(./PICS/BG.png);
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
-}
+} */
 html{
     overflow-x: hidden;
 }
@@ -79,16 +77,16 @@ header nav .button button{
     padding: 10px 30px;
     font-size: 20px;
     border-radius: 10px;
-    background-color: var(--butColor);
+    background-color: white;
     border: 3px solid var(--butColor);
-    color: #ffffff;
+    color: black;
     font-family: var(--Ofam);
     font-weight: 600;
     cursor: pointer;
 }
 header nav .button button:hover{
-    color: var(--butColor);
-    background-color: #ffffff;
+    color: white;
+    background-color: var(--butColor);
 }
 @media screen and (max-width: 767px) {
     header .head{
@@ -162,9 +160,7 @@ header nav .button button:hover{
     align-items: center;
     flex-wrap: wrap;
     gap: 2em;
-    background-color: #f8d511;
-    background-image: linear-gradient(62deg, #d9370b 0%, #f8d511 100%);
-    ;
+   
 }
 .sect-eti .details{
     flex: 1;
@@ -172,12 +168,50 @@ header nav .button button:hover{
     gap: 1em;
 }
 .sect-eti .details h1 span{
-    color: #f8d511;
+    color: var(--butColor);
 }
 .sect-eti .log{
     flex: 1;
     display: flex;
     justify-content: center;
+}
+.sect-eti .log img{
+    width: 100%;
+}
+.sect-eti .details div{
+    width: 120px;
+}
+.sect-eti .details button{
+    width: 100%;
+    height: 40px;
+    margin: 10px 0;
+    border: 2px solid var(--butColor);
+    font-weight: 600;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.sect-eti .details button:hover{
+    color: #ffffff;
+    background-color: var(--butColor);
+}
+.sect-eti .details .soc-icon{
+    display: flex;
+    justify-content: space-between;
+}
+.sect-eti .details .soc-icon div{
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.sect-eti .details .soc-icon div:hover{
+    background-color: var(--butColor);
+}
+.sect-eti .details .soc-icon img{
+    width: 30px;
 }
 .sect-eti h1{
     font-size: 60px;
@@ -203,6 +237,15 @@ header nav .button button:hover{
         width: 300px;
     }
 }
+.lines{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px 50px;
+    gap: 10px;
+}
+.lines img{
+    width: 270px;
+}
 /* section 2 */
 .how-it-works h1{
     text-align: center;
@@ -210,44 +253,49 @@ header nav .button button:hover{
     font-size: 50px;
     font-family: var(--Ofam);
 }
-.how-it-works{
+/* .how-it-works{
     padding: 50px 0px;
-}
+} */
 .how-it-works .hiw{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    padding: 50px 0px;
-    gap: 2.5em;
+    /* padding: 0px 50px; */
 }
-.how-it-works .hiw .items{
+.how-it-works .hiw .lhs-img img{
+    width: 100%;
+}
+.how-it-works .hiw .lhs-img{
+    flex: 1;
+}
+.how-it-works .hiw .rhs-details{
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 350px;
-    height: 250px;
-    cursor: pointer;
-    gap: 1.5em;
-    background-color: rgb(235, 232, 228);
-    box-shadow: 0 0 5px 5px rgb(235, 232, 228);
-    border-radius: 20px;
+    gap: 10px;
 }
-.how-it-works .hiw .items img{
-    width: 75px;
+.how-it-works .hiw .rhs-details p{
+    font-size: 20px;
+    font-weight: 600;
 }
-.how-it-works .items p{
-    font-size: 30px;
-    font-family: var(--Ofam);
-    font-weight: 500;
-    text-align: center;
+.how-it-works .hiw .rhs-details .det{
+    margin-bottom: 30px;
 }
-.how-it-works #red:hover{
-    background-color: var(--butColor);
+.how-it-works .hiw .rhs-details .sub-details{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
 }
-.how-it-works #yell:hover{
-    background-color: var(--hColor);
+.how-it-works .hiw .rhs-details .sub-details img{
+    width: 35px;
+}
+.how-it-works .hiw .rhs-details .sub-details div{
+    display: flex;
+    gap: 1em;
+    width: 400px;
 }
 @media screen and (max-width: 767px) {
     .how-it-works .hiw{
@@ -257,12 +305,10 @@ header nav .button button:hover{
         width: 250px;
         height: 200px;
     }
-    .how-it-works .items p{
-        font-size: 20px;
-    }
-    .how-it-works h1{
-        font-size: 30px;
-    } 
+    /* .how-it-works .hiw .rhs-details .sub-details div{
+        width: 300px;
+    } */
+     
 }
 /* section 3 */
 .benefits h1{
