@@ -115,8 +115,6 @@ header nav .button button:hover{
         z-index: 100px;
         border-radius: 20px;
         top: 0px;
-        /* right: 0px; */
-        /* left: -10em; */
         padding: 1em;
         width: 100%;
         height: 250px;
@@ -130,9 +128,6 @@ header nav .button button:hover{
         position: absolute;
         left: 150px;
     }
-    /* header nav ul li{
-        margin-right: 300px;
-    } */
     header nav .button{
         display: flex;
         justify-content: center;
@@ -160,11 +155,11 @@ header nav .button button:hover{
     align-items: center;
     flex-wrap: wrap;
     gap: 2em;
-   
+   padding: 0px 50px;
 }
 .sect-eti .details{
     flex: 1;
-    padding: 50px;
+    /* padding: 50px; */
     gap: 1em;
 }
 .sect-eti .details h1 span{
@@ -189,6 +184,7 @@ header nav .button button:hover{
     font-weight: 600;
     border-radius: 20px;
     cursor: pointer;
+    box-shadow: 2px 2px 2px var(--butColor);
 }
 .sect-eti .details button:hover{
     color: #ffffff;
@@ -239,76 +235,76 @@ header nav .button button:hover{
 }
 .lines{
     display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    /* flex-wrap: wrap; */
     padding: 0px 50px;
     gap: 10px;
 }
 .lines img{
-    width: 270px;
+    width: 24%;
 }
 /* section 2 */
 .how-it-works h1{
-    text-align: center;
     color: var(--fColor);
     font-size: 50px;
     font-family: var(--Ofam);
 }
-/* .how-it-works{
-    padding: 50px 0px;
-} */
-.how-it-works .hiw{
+.how-it-works{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    /* padding: 0px 50px; */
 }
-.how-it-works .hiw .lhs-img img{
+.how-it-works .lhs-img img{
     width: 100%;
 }
-.how-it-works .hiw .lhs-img{
+.how-it-works .lhs-img{
     flex: 1;
 }
-.how-it-works .hiw .rhs-details{
+.how-it-works .rhs-details{
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+    justify-content: start;
+    align-content: flex-start;
+    gap: 15px;
+    width: 300px;
 }
-.how-it-works .hiw .rhs-details p{
+.how-it-works .rhs-details p{
     font-size: 20px;
     font-weight: 600;
 }
-.how-it-works .hiw .rhs-details .det{
+.how-it-works .rhs-details .det{
     margin-bottom: 30px;
+    text-align: start;
 }
-.how-it-works .hiw .rhs-details .sub-details{
+.how-it-works .rhs-details .sub-details{
     display: flex;
     flex-direction: column;
-    gap: 2em;
+    justify-content: start;
+    align-items: flex-start;
+    gap: 2.5em;
+    width: 350px;
 }
-.how-it-works .hiw .rhs-details .sub-details img{
-    width: 35px;
+.how-it-works  .rhs-details  img{
+    width: 40px;
 }
-.how-it-works .hiw .rhs-details .sub-details div{
+.how-it-works .rhs-details .sub-details div{
     display: flex;
+    flex-direction: row;
+    justify-content: end;
     gap: 1em;
-    width: 400px;
+    
 }
 @media screen and (max-width: 767px) {
-    .how-it-works .hiw{
-        padding: 20px 0px;
+    .how-it-works {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
     }
-    .how-it-works .hiw .items{
-        width: 250px;
-        height: 200px;
-    }
-    /* .how-it-works .hiw .rhs-details .sub-details div{
+    .how-it-works .rhs-details .sub-details{
         width: 300px;
-    } */
-     
+    }
 }
 /* section 3 */
 .benefits h1{
@@ -333,8 +329,8 @@ header nav .button button:hover{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 400px;
-    height: 400px;
+    width: 350px;
+    height: 350px;
     padding: 20px;
     background-color: rgb(235, 232, 228);
     box-shadow: 0 0 5px 5px rgb(235, 232, 228);
@@ -343,18 +339,20 @@ header nav .button button:hover{
     cursor: pointer;
 }
 .benefits .items h3{
-    font-size: 30px;
+    font-size: 27px;
 }
 .benefits .items p{
-    font-size: 30px;
+    font-size: 23px;
     font-family: var(--Ofam);
     font-weight: 400;
 }
 .benefits #red:hover{
     background-color: var(--butColor);
+    transition: all ease 0.4s;
 }
 .benefits #yell:hover{
     background-color: var(--hColor);
+    transition: all ease 0.4s;
 }
 @media screen and (max-width: 767px) {
     .benefits .bene{
@@ -378,7 +376,7 @@ header nav .button button:hover{
     flex-direction: column;
     border: 5px solid var(--tcolor);
     padding: 65px;
-    border-radius: 10%;
+    /* border-radius: 10%; */
     /* margin: 0px 250px; */
     margin-bottom: 150px;
     gap: 0.5em;
@@ -451,6 +449,7 @@ footer p{
     color: white;
     font-size: 18px;
     font-family: var(--Ofam);
+    font-weight: 500;
     cursor: pointer;
 }
 footer p a{
@@ -465,14 +464,25 @@ footer form{
 footer .input .soc{
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     gap: 0.5px;
     width: 150px;
 }
 footer .input .soc img{
-    width: 30px;
-    height: 25px;
+    width: 95%;
+    /* width: 20px;
+    height: 15px; */
     cursor: pointer;
+}
+footer .input .soc div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    background-color:rgb(1, 1, 15);
 }
 footer form input{
     
